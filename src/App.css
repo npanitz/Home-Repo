@@ -1,3 +1,149 @@
-/* body {
-  background-color: red;
-} */
+body {
+  font-family: Georgia;
+}
+.title {
+  padding: 10px;
+  font-family: "Brush Script MT";
+  background-image: linear-gradient(grey, rgb(255, 255, 255));
+  text-align: left;
+  font-size: 60px;
+  font-weight: bold;
+  color: darkslategrey;
+  border-bottom: 1px solid rgb(64, 107, 107);
+}
+
+.list-item {
+  border-top: 1px solid black;
+  width: 100%;
+  height: 80px;
+  display: inline-grid;
+  grid-template-rows: repeat(4, 25%);
+  grid-template-columns: 20% 10% 70%;
+}
+
+.list-item:hover {
+  background-color: rgb(162, 179, 185);
+  cursor: pointer;
+}
+
+.list {
+  display: block;
+  width: 50%;
+  float: center;
+  height: 1000px;
+  margin: 0 auto;
+  margin-top: 20px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.repo-name {
+  font-size: 25px;
+  margin-top: 5px;
+  float: left;
+  color: darkslategrey;
+  grid-row: 1 / span 2;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  grid-column: 1;
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.star-count {
+  grid-row: 3;
+  grid-column: 1;
+  margin-left: 10px;
+  color: darkslategrey;
+}
+
+.fork-count {
+  grid-row: 4;
+  grid-column: 1;
+  margin-left: 10px;
+  color: darkslategrey;
+}
+
+.language {
+  text-align: right;
+  padding: 5px;
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  box-sizing: border-box;
+}
+
+.language .icon {
+  font-size: 30px;
+  text-align: right;
+  color: darkslategrey;
+}
+
+.language .text {
+  font-size: 15px;
+}
+
+.date {
+  text-align: right;
+  font-size: 15px;
+  padding-bottom: 5px;
+  padding-right: 5px;
+  grid-column: 2;
+  grid-row: 4;
+}
+
+.description {
+  font-size: 17px;
+  grid-column-start: 3;
+  grid-row: 1 / span 4;
+  border-left: 1px grey solid;
+  padding: 10px;
+  overflow: auto;
+  text-overflow: ellipsis;
+}
+
+.org-main {
+  display: block;
+  width: 550px;
+  padding: 10px;
+  /* margin: 0 auto; */
+  font-size: 30px;
+}
+
+.org-input {
+  height: 20px;
+  width: 150px;
+
+  padding: 5px;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+.org-submit {
+  width: 80px;
+  height: 30px;
+  border-radius: 5px;
+  font-size: 15px;
+  background-color: rgba(134, 127, 127, 0.459);
+  height: 30px;
+  font-weight: bold;
+}
+
+.org-submit:hover {
+  background-color: rgb(64, 107, 107);
+  cursor: pointer;
+}
+
+.org-title {
+  text-align: center;
+  font-size: 80px;
+}
+.error-message {
+  text-align: center;
+  width: 15%;
+  margin: 0 auto;
+  background-color: white;
+  margin-top: 30px;
+  font-size: 30px;
+}
