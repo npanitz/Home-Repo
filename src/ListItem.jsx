@@ -11,6 +11,7 @@ import {
   DiGroovy,
   DiTerminal,
   DiPhp,
+  DiSwift,
 } from "react-icons/di";
 import {
   SiTypescript,
@@ -39,6 +40,7 @@ const languageLogos = {
   Ruby: <SiRuby />,
   Go: <SiGo />,
   PHP: <DiPhp />,
+  Swift: <DiSwift />,
 };
 
 const ListItem = ({ repo }) => {

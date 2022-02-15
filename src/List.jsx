@@ -1,30 +1,61 @@
 import React, { useEffect, useState, useCallback } from "react";
 import ReactDOM from "react-dom";
 import ListItem from "./ListItem";
+import CommitList from "./CommitList";
 
-const List = ({ org, setListSwitch }) => {
+const List = ({ org }) => {
   const [repos, setRepos] = useState([]);
-  const [repoClicked, setRepoClicked] = useState(false);
+  const [commits, setCommits] = useState([]);
+  const [commitsURL, setCommitsURL] = useState("");
   useEffect(() => fetchRepos(setRepos, org), [fetchRepos, org]);
+  useEffect(
+    () => fetchCommits(setCommits, setCommitsURL, commitsURL),
+    [fetchCommits, commitsURL]
+  );
   if (!repos || repos.length < 1)
     return <div className="error-message">Error: Not Found</div>;
   return (
     <div className="list">
       {repos
-        .sort((a, b) => (a.stargazers_count < b.stargazers_count ? 1 : -1))
+        .sort(
+          (a, b) =>
+            b.stargazers_count - a.stargazers_count ||
+            a.created_at - b.created_at
+        )
         .map((repo) => (
-          <ListItem key={repo.id} repo={repo} />
+          <div key={repo.id}>
+            <div
+              onClick={() =>
+                setCommitsURL(commitsURL == "" ? repo.commits_url : "")
+              }
+            >
+              <ListItem repo={repo} />
+            </div>
+            <div>
+              {commitsURL.length > 0 && repo.commits_url == commitsURL ? (
+                <CommitList commits={commits} />
+              ) : null}
+            </div>
+          </div>
         ))}
     </div>
   );
 };
 
-const fetchCommits = (setCommits, commitsURL) => {
-  console.log("ok");
+const fetchCommits = (setCommits, setCommitsURL, commitsURL) => {
+  commitsURL = commitsURL.slice(0, -6);
   fetch(commitsURL)
     .then((response) => response.json())
     .then((responseJSON) => {
-      console.log(responseJSON);
+      if (responseJSON.message == "Not Found") {
+        setCommits([]);
+      } else {
+        setCommits(responseJSON);
+      }
+    })
+    .catch((err) => {
+      setCommitsURL("");
+      setCommits([]);
     });
 };
 
