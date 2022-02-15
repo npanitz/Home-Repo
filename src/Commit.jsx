@@ -7,11 +7,11 @@ const Commit = ({ commit }) => {
         {commit.commit.message.split("\n")[0]}
       </div>
       <div className="commit-author">
-        Author/Committer: {commit.commit.committer.name}
+        Committer: {commit.commit.committer.name}
       </div>
       <div className="commit-hash">Commit hash: {commit.sha}</div>
       <div className="commit-date">
-        {new Date(commit.commit.author.date).toLocaleString("en", {
+        {new Date(commit.commit.committer.date).toLocaleString("en", {
           dateStyle: "short",
         })}
       </div>

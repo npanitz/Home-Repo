@@ -1,5 +1,5 @@
 {
-  "name": "webpack-react",
+  "name": "home-repo",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,7 +11,7 @@
   "keywords": [
     "webpack-react"
   ],
-  "author": "NPaine",
+  "author": "Naftali Panitz",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.17.2",

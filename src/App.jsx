@@ -1,14 +1,15 @@
 import React, { useState } from "react";
-import { SiHomeassistantcommunitystore } from "react-icons/si";
 import "./App.css";
 import List from "./List";
+
+import { SiFacebook, SiNetflix, SiYoutube, SiInstagram } from "react-icons/si";
 
 const App = () => {
   const [org, setOrg] = useState("Netflix");
   const [inputVal, setInputVal] = useState("");
 
   return (
-    <div>
+    <div className="container">
       <div className="title">Home Repo</div>
       <div className="org-main">
         <label>Enter Organization: </label>
@@ -24,7 +25,7 @@ const App = () => {
           Submit
         </button>
       </div>
-      <div className="org-title">{org + " Repositories"}</div>
+      <div className="org-title">{org + " Repos"}</div>
       <List org={org} />
     </div>
   );

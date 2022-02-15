@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Commit from "./Commit";
 
 const CommitList = (commits) => {
-  console.log(commits);
   if (commits.commits.length > 0) {
     return (
       <div>

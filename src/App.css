@@ -1,10 +1,26 @@
 body {
   font-family: Georgia;
+  margin: 0;
 }
+
+@media (max-width: 900px) {
+  .org-title {
+    font-size: 35px !important;
+  }
+  .list {
+    width: 100% !important;
+    height: calc(100% - 250px) !important;
+  }
+}
+
+.container {
+  height: 100vh;
+  min-width: 570px;
+}
+
 .title {
   padding: 10px;
   font-family: "Brush Script MT";
-  background-image: linear-gradient(grey, rgb(255, 255, 255));
   text-align: left;
   font-size: 60px;
   font-weight: bold;
@@ -15,11 +31,18 @@ body {
 .commit-title {
   font-weight: bold;
   padding: 10px;
-  color: rgb(119, 7, 7);
+  width: 82.7%;
+  height: 10px;
+  background-color: darkslategrey;
+  color: white;
   font-size: 18px;
-  margin-left: 7%;
+  margin: 0 auto;
   margin-top: 20px;
-  margin-bottom: 10px;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 .list-item {
@@ -52,12 +75,13 @@ body {
 
 .list {
   display: block;
-  width: 50%;
+  max-width: 1000px;
+  width: 90%;
   float: center;
-  height: 1000px;
+  height: calc(100% - 320px);
   margin: 0 auto;
   margin-top: 20px;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
 }
 
@@ -65,11 +89,9 @@ body {
   width: 85%;
   height: 300px;
   margin: 0 auto;
-  margin-top: 10px;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
   background-color: rgb(240, 238, 238);
-  border-radius: 5px;
 }
 
 .repo-name {
@@ -192,7 +214,7 @@ body {
   height: 30px;
   border-radius: 5px;
   font-size: 15px;
-  background-color: rgba(134, 127, 127, 0.459);
+  background-color: rgb(209, 207, 207);
   height: 30px;
   font-weight: bold;
 }
@@ -205,6 +227,8 @@ body {
 .org-title {
   text-align: center;
   font-size: 80px;
+  margin: 0 auto;
+  padding: 5px;
 }
 .error-message {
   text-align: center;
