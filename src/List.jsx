@@ -28,7 +28,7 @@ const List = ({ org }) => {
             a.created_at - b.created_at
         )
         .map((repo) => (
-          <div key={repo.id}>
+          <div title={repo.name} key={repo.id}>
             <div
               onClick={() =>
                 setCommitsURL(
